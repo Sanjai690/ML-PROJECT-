@@ -1,146 +1,202 @@
-# Mood Canvas - Emotion Music Player
+# Expert Knowledge Gap Detection System
 
-A Java Swing desktop app that plays music based on your mood.
+A machine learning-powered web application that detects and prioritizes knowledge gaps in learner profiles using K-Means clustering, statistical analysis, and risk scoring.
 
-You can:
-- Pick a mood manually (Happy, Sad, Relax)
-- Use webcam-based auto-detection (demo mode cycles detected expressions)
-- Enjoy a styled, animated UI with mood-based color transitions
+## Overview
+
+This system analyzes learner performance across five key academic topics and provides:
+- **Cluster-based learner profiling** - Groups learners into distinct knowledge profiles
+- **Gap analysis** - Identifies specific knowledge deficiencies relative to cluster benchmarks
+- **Risk scoring** - Quantifies the urgency of skill gaps using weighted metrics
+- **Intervention planning** - Generates personalized learning recommendations with actionable timelines
 
 ## Features
 
-- Mood-based music playback using Java Clip API
-- Modern Swing UI with gradients, rounded buttons, and smooth color transitions
-- Auto-detect mood flow through webcam integration
-- Simple architecture using OOP concepts (enum, service layer, UI layer)
+### 📊 Core Capabilities
+- **Multi-dimensional Scoring**: Evaluates learners across 5 topics:
+  - Algebra
+  - Geometry
+  - Statistics
+  - Programming
+  - Problem Solving
 
-## Tech Stack
+- **Confidence Metrics**: Measures prediction reliability based on centroid distance and cluster analysis
 
-- Java (compiled with Java 8 compatibility)
-- Swing/AWT for UI
-- Java Sound (`javax.sound.sampled`) for audio playback
-- Webcam Capture library (`com.github.sarxos:webcam-capture`) for camera input
+- **Weighted Risk Assessment**: Calculates priority using:
+  - Gap magnitude (learner score vs. target)
+  - Topic importance weights
+  - Cluster baseline statistics
+
+- **Dynamic Severity Classification**: Categorizes gaps as High, Medium, Low, or On Track
+
+- **Adaptive Intervention Planning**: Recommends:
+  - Learning intensity (2-5 sessions/week based on risk tier)
+  - Specific topic focus areas
+  - Customizable action horizons (2, 4, or 8 weeks)
+
+### 📈 Analysis Outputs
+- **Gap Analysis Table**: Ranked by priority with detailed deficit metrics
+- **Topic Comparison**: Visual comparison across learner, cluster, and target scores
+- **Intervention Planner**: Week-by-week learning roadmaps
+- **Data Export**: Download results for external tools
 
 ## Project Structure
 
-```text
-MoodMusicPlayerJavaProject/
-  lib/
-    webcam-capture-0.3.12.jar
-    slf4j-api-1.7.36.jar
-    slf4j-simple-1.7.36.jar
-    bridj-0.7.0.jar
-  music/
-    Happy.wav
-    Sad.wav
-    Relax.wav
-  src/
-    BaseMoodFrame.java
-    FacialExpressionDetector.java
-    Main.java
-    Mood.java
-    MoodMusicService.java
-    MoodMusicUI.java
-    MusicPlayer.java
-  run.bat
-  README.txt
-  CREATIVE_ENHANCEMENTS.md
-  FACIAL_RECOGNITION_SETUP.md
+```
+ml 2006/
+├── app.py                           # Main Streamlit web application
+├── knowledge_gap_detection_web.ipynb # Jupyter notebook with analysis & model training
+├── kmeans_model.pkl                 # Trained K-Means clustering model
+├── scaler.pkl                       # Feature preprocessing scaler
+├── features.pkl                     # Feature names and configuration
+├── cluster_profiles.pkl             # Average scores per cluster
+├── cluster_gaps.pkl                 # Gap statistics per cluster
+├── cluster_distance_stats.pkl       # Centroid distance metrics
+├── topic_targets.pkl                # Target score benchmarks
+├── priority_weight_map.pkl          # Topic importance weights
+├── remediation_map.pkl              # Intervention strategies
+└── New folder/                      # Additional resources
 ```
 
-## Requirements
+## Installation & Setup
 
-- Windows (for the included `run.bat` script)
-- JDK 8 or newer available in PATH
-- Webcam (optional, for auto-detect flow)
-- Audio files in `music/`:
-  - `Happy.wav`
-  - `Sad.wav`
-  - `Relax.wav`
+### Prerequisites
+- Python 3.8+
+- Streamlit
+- NumPy
+- Pandas
+- Scikit-learn
+- Joblib
 
-Important:
-- File names are case-sensitive in the code (`Happy.wav`, `Sad.wav`, `Relax.wav`).
-- If files are missing, the app opens but music will not play.
+### Setup Steps
 
-## Quick Start (Windows)
+1. **Create Virtual Environment** (if not already done):
+   ```powershell
+   python -m venv .venv
+   ```
 
-Run from project root:
+2. **Activate Environment**:
+   ```powershell
+   .\.venv\Scripts\Activate.ps1
+   ```
 
-```bat
-run.bat
+3. **Install Dependencies**:
+   ```bash
+   pip install streamlit numpy pandas scikit-learn joblib
+   ```
+
+## Usage
+
+### Running the Web Application
+
+```bash
+streamlit run app.py
 ```
 
-What it does:
-- Compiles Java files in `src/`
-- Includes required camera/logging jars from `lib/`
-- Launches the app
+The application will launch at `http://localhost:8501`
 
-## Manual Compile and Run
+### Using the Interface
 
-From project root:
+1. **Sidebar Controls**:
+   - Adjust gap threshold (40-80 points)
+   - Set confidence alert floor (20%-80%)
+   - Select action horizon (2, 4, or 8 weeks)
 
-```bat
-javac -source 8 -target 8 -cp "lib\webcam-capture-0.3.12.jar;lib\slf4j-api-1.7.36.jar" src\*.java
-java -cp "lib\webcam-capture-0.3.12.jar;lib\slf4j-api-1.7.36.jar;lib\slf4j-simple-1.7.36.jar;lib\bridj-0.7.0.jar;src" Main
+2. **Input Scores**:
+   - Use sliders to enter learner scores (0-100) for each topic
+   - Click "Analyze Learner Profile" to run prediction
+
+3. **Review Results**:
+   - **Summary Tab**: Cluster assignment, confidence, risk score
+   - **Gap Analysis Tab**: Ranked list of knowledge deficiencies
+   - **Topic Comparison Tab**: Visual performance benchmarking
+   - **Intervention Planner**: Actionable weekly learning plan
+   - **Export Tab**: Download results as CSV/JSON
+
+### Using the Jupyter Notebook
+
+The `knowledge_gap_detection_web.ipynb` notebook contains:
+- Model training and validation
+- EDA (exploratory data analysis)
+- Cluster profiling and visualization
+- Statistical analysis of cluster characteristics
+
+To run:
+```bash
+jupyter notebook knowledge_gap_detection_web.ipynb
 ```
 
-## How to Use
+## Technical Details
 
-1. Launch the app.
-2. Click one of the mood buttons:
-   - Happy
-   - Sad
-   - Relax
-3. Or click Auto Detect My Mood (AI Camera):
-   - Opens camera window
-   - Starts detection cycle
-   - Updates active mood and playback automatically
+### Machine Learning Pipeline
 
-## Auto-Detection Notes
+1. **Feature Scaling**: StandardScaler normalizes input scores
+2. **Clustering**: K-Means groups learners into knowledge profiles
+3. **Distance Metrics**: Euclidean distance from cluster centroids
+4. **Confidence Scoring**: Based on relative distance to all clusters
+5. **Risk Calculation**: Weighted sum of normalized gaps
 
-Current implementation is demo-oriented:
-- Webcam feed opens and runs
-- Mood detection is simulated in a cycle (smiling, calm, thoughtful)
-- Each detected expression maps to a mood and triggers playback
+### Risk Tier Thresholds
 
-For production-grade emotion recognition guidance, see:
-- `FACIAL_RECOGNITION_SETUP.md`
+| Risk Tier | Score Range | Recommended Intensity |
+|-----------|-------------|-----------------------|
+| Critical  | ≥ 35        | 5 focused sessions/week |
+| High      | 22-34       | 4 focused sessions/week |
+| Moderate  | 10-21       | 3 focused sessions/week |
+| Low       | < 10        | 2 maintenance sessions/week |
 
-## Troubleshooting
+### Severity Classification
 
-### Music not playing
+- **High**: Gap ≥ 20 points
+- **Medium**: Gap 10-19 points
+- **Low**: Gap 1-9 points
+- **On Track**: Gap ≤ 0 points
 
-- Ensure `music/Happy.wav`, `music/Sad.wav`, `music/Relax.wav` exist.
-- Check system volume/output device.
-- Watch console output for missing file messages.
+## Configuration
 
-### Camera not opening
+Adjustable parameters in app.py:
+- `gap_threshold`: Minimum score to flagging weak topics (default: 60)
+- `confidence_floor`: Alert threshold for unreliable predictions (default: 0.45)
+- `action_horizon`: Intervention planning timeline
+- Risk tier thresholds and weekly intensity recommendations
 
-- Close apps that may be using webcam (Teams, Zoom, etc.).
-- Confirm webcam permissions in Windows privacy settings.
-- Re-run the app.
+## Output Data
 
-### Build errors
+### Gap Analysis Table Columns
+- **Topic**: Subject area
+- **Learner_Score**: Current performance
+- **Cluster_Average**: Peer benchmark
+- **Suggested_Target**: Recommended score
+- **Priority_Weight**: Topic importance factor
+- **Gap_to_Target**: Points needed to reach target
+- **Weighted_Deficit**: Priority-adjusted gap
+- **Severity**: High/Medium/Low/On Track
+- **Priority_Rank**: Intervention priority order
 
-- Confirm JDK is installed and `javac` is available.
-- Verify all jar files are present in `lib/`.
-- Run from project root so relative paths resolve correctly.
+## Development Notes
 
-## Design and Enhancement Notes
+- Models and scalers are pre-trained (`*.pkl` files)
+- Feature names stored in `features.pkl`
+- Cluster metadata cached for performance
+- Web interface uses Streamlit for rapid prototyping
 
-See:
-- `CREATIVE_ENHANCEMENTS.md` for UI styling details
-- `FACIAL_RECOGNITION_SETUP.md` for upgrading to real emotion detection
+## Future Enhancements
 
-## Future Improvements
-
-- Replace demo mood cycle with real ML-based facial emotion inference
-- Add playlist support per mood
-- Add mute/volume and track controls
-- Add settings panel for custom mood-to-track mapping
+- [ ] Real-time model retraining
+- [ ] User profile persistence
+- [ ] Integration with learning management systems
+- [ ] Advanced visualization dashboards
+- [ ] Multi-language support
+- [ ] Mobile-responsive design
 
 ## License
 
-Personal/educational project.
-Add a license file if you plan to distribute publicly.
+[Specify your license]
 
+## Author
+
+[Your Name/Organization]
+
+---
+
+**Last Updated**: April 2026
