@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "file": "priority_weight_map.pkl",
+    "loader": "pickle",
+    "python_type": "dict",
+    "python_module": "builtins"
+  },
+  "data": {
+    "Algebra": 0.176,
+    "Geometry": 0.21,
+    "Statistics": 0.2212,
+    "Programming": 0.1824,
+    "Problem_Solving": 0.2105
+  }
+}

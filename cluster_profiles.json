@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "file": "cluster_profiles.pkl",
+    "loader": "joblib",
+    "python_type": "DataFrame",
+    "python_module": "pandas"
+  },
+  "data": {
+    "_type": "DataFrame",
+    "shape": [
+      7,
+      5
+    ],
+    "columns": [
+      "Algebra",
+      "Geometry",
+      "Statistics",
+      "Programming",
+      "Problem_Solving"
+    ],
+    "head": [
+      {
+        "Algebra": 83.42,
+        "Geometry": 57.29,
+        "Statistics": 41.31,
+        "Programming": 75.17,
+        "Problem_Solving": 68.62
+      },
+      {
+        "Algebra": 77.21,
+        "Geometry": 77.87,
+        "Statistics": 55.41,
+        "Programming": 76.81,
+        "Problem_Solving": 49.07
+      },
+      {
+        "Algebra": 62.73,
+        "Geometry": 49.71,
+        "Statistics": 46.03,
+        "Programming": 59.51,
+        "Problem_Solving": 50.72
+      },
+      {
+        "Algebra": 58.47,
+        "Geometry": 77.81,
+        "Statistics": 65.0,
+        "Programming": 47.18,
+        "Problem_Solving": 56.88
+      },
+      {
+        "Algebra": 73.62,
+        "Geometry": 54.86,
+        "Statistics": 82.51,
+        "Programming": 71.48,
+        "Problem_Solving": 62.93
+      },
+      {
+        "Algebra": 65.7,
+        "Geometry": 51.96,
+        "Statistics": 59.78,
+        "Programming": 57.82,
+        "Problem_Solving": 86.43
+      },
+      {
+        "Algebra": 49.19,
+        "Geometry": 60.81,
+        "Statistics": 62.66,
+        "Programming": 83.18,
+        "Problem_Solving": 60.46
+      }
+    ]
+  }
+}

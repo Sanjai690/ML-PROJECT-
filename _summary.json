@@ -1,0 +1,56 @@
+[
+  {
+    "file": "cluster_distance_stats.pkl",
+    "status": "ok",
+    "loader": "joblib",
+    "type": "pandas.DataFrame"
+  },
+  {
+    "file": "cluster_gaps.pkl",
+    "status": "ok",
+    "loader": "pickle",
+    "type": "builtins.dict"
+  },
+  {
+    "file": "cluster_profiles.pkl",
+    "status": "ok",
+    "loader": "joblib",
+    "type": "pandas.DataFrame"
+  },
+  {
+    "file": "features.pkl",
+    "status": "ok",
+    "loader": "pickle",
+    "type": "builtins.list"
+  },
+  {
+    "file": "kmeans_model.pkl",
+    "status": "ok",
+    "loader": "joblib",
+    "type": "sklearn.cluster._kmeans.KMeans"
+  },
+  {
+    "file": "priority_weight_map.pkl",
+    "status": "ok",
+    "loader": "pickle",
+    "type": "builtins.dict"
+  },
+  {
+    "file": "remediation_map.pkl",
+    "status": "ok",
+    "loader": "pickle",
+    "type": "builtins.dict"
+  },
+  {
+    "file": "scaler.pkl",
+    "status": "ok",
+    "loader": "joblib",
+    "type": "sklearn.preprocessing._data.StandardScaler"
+  },
+  {
+    "file": "topic_targets.pkl",
+    "status": "ok",
+    "loader": "joblib",
+    "type": "pandas.DataFrame"
+  }
+]

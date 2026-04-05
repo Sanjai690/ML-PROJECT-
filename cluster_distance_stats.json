@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "file": "cluster_distance_stats.pkl",
+    "loader": "joblib",
+    "python_type": "DataFrame",
+    "python_module": "pandas"
+  },
+  "data": {
+    "_type": "DataFrame",
+    "shape": [
+      7,
+      2
+    ],
+    "columns": [
+      "mean",
+      "std"
+    ],
+    "head": [
+      {
+        "mean": 1.576,
+        "std": 0.4979
+      },
+      {
+        "mean": 1.527,
+        "std": 0.5202
+      },
+      {
+        "mean": 1.4565,
+        "std": 0.5013
+      },
+      {
+        "mean": 1.6348,
+        "std": 0.6319
+      },
+      {
+        "mean": 1.4405,
+        "std": 0.5756
+      },
+      {
+        "mean": 1.5627,
+        "std": 0.4698
+      },
+      {
+        "mean": 1.5283,
+        "std": 0.4279
+      }
+    ]
+  }
+}

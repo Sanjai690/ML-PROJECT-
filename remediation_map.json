@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "file": "remediation_map.pkl",
+    "loader": "pickle",
+    "python_type": "dict",
+    "python_module": "builtins"
+  },
+  "data": {
+    "Algebra": [
+      "Linear equations drills",
+      "Timed simplification quizzes",
+      "Error-log review for signs and operations"
+    ],
+    "Geometry": [
+      "Diagram labeling practice",
+      "Theorem flashcards",
+      "Proof-by-steps worksheets"
+    ],
+    "Statistics": [
+      "Mean/median/variance mini-sets",
+      "Interpretation of charts",
+      "Probability micro-practice"
+    ],
+    "Programming": [
+      "Debugging exercises",
+      "Function decomposition tasks",
+      "Data-structure coding katas"
+    ],
+    "Problem_Solving": [
+      "Pattern-recognition puzzles",
+      "Multi-step word problems",
+      "Reflective solution journaling"
+    ]
+  }
+}

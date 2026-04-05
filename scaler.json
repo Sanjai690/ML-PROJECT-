@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "file": "scaler.pkl",
+    "loader": "joblib",
+    "python_type": "StandardScaler",
+    "python_module": "sklearn.preprocessing._data"
+  },
+  "data": {
+    "_type": "StandardScaler",
+    "module": "sklearn.preprocessing._data",
+    "params": {
+      "copy": true,
+      "with_mean": true,
+      "with_std": true
+    }
+  }
+}

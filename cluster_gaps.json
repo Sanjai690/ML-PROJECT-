@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "file": "cluster_gaps.pkl",
+    "loader": "pickle",
+    "python_type": "dict",
+    "python_module": "builtins"
+  },
+  "data": {
+    "0": [
+      "Geometry",
+      "Statistics"
+    ],
+    "1": [
+      "Statistics",
+      "Problem_Solving"
+    ],
+    "2": [
+      "Geometry",
+      "Statistics",
+      "Programming",
+      "Problem_Solving"
+    ],
+    "3": [
+      "Algebra",
+      "Programming",
+      "Problem_Solving"
+    ],
+    "4": [
+      "Geometry"
+    ],
+    "5": [
+      "Geometry",
+      "Statistics",
+      "Programming"
+    ],
+    "6": [
+      "Algebra"
+    ]
+  }
+}

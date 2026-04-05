@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "file": "topic_targets.pkl",
+    "loader": "joblib",
+    "python_type": "DataFrame",
+    "python_module": "pandas"
+  },
+  "data": {
+    "_type": "DataFrame",
+    "shape": [
+      7,
+      5
+    ],
+    "columns": [
+      "Algebra",
+      "Geometry",
+      "Statistics",
+      "Programming",
+      "Problem_Solving"
+    ],
+    "head": [
+      {
+        "Algebra": 91.4,
+        "Geometry": 65.3,
+        "Statistics": 49.3,
+        "Programming": 83.2,
+        "Problem_Solving": 76.6
+      },
+      {
+        "Algebra": 85.2,
+        "Geometry": 85.9,
+        "Statistics": 63.4,
+        "Programming": 84.8,
+        "Problem_Solving": 57.1
+      },
+      {
+        "Algebra": 70.7,
+        "Geometry": 57.7,
+        "Statistics": 54.0,
+        "Programming": 67.5,
+        "Problem_Solving": 58.7
+      },
+      {
+        "Algebra": 66.5,
+        "Geometry": 85.8,
+        "Statistics": 73.0,
+        "Programming": 55.2,
+        "Problem_Solving": 64.9
+      },
+      {
+        "Algebra": 81.6,
+        "Geometry": 62.9,
+        "Statistics": 90.5,
+        "Programming": 79.5,
+        "Problem_Solving": 70.9
+      },
+      {
+        "Algebra": 73.7,
+        "Geometry": 60.0,
+        "Statistics": 67.8,
+        "Programming": 65.8,
+        "Problem_Solving": 94.4
+      },
+      {
+        "Algebra": 57.2,
+        "Geometry": 68.8,
+        "Statistics": 70.7,
+        "Programming": 91.2,
+        "Problem_Solving": 68.5
+      }
+    ]
+  }
+}

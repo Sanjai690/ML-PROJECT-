@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "file": "features.pkl",
+    "loader": "pickle",
+    "python_type": "list",
+    "python_module": "builtins"
+  },
+  "data": [
+    "Algebra",
+    "Geometry",
+    "Statistics",
+    "Programming",
+    "Problem_Solving"
+  ]
+}
